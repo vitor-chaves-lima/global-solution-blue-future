@@ -1,3 +1,6 @@
+gsap.registerPlugin(TextPlugin);
+gsap.registerPlugin(ScrollTrigger);
+
 const hero = "#hero";
 const heroScrollIndicator = ".hero-scroll-icon-wrapper";
 const highlightedText = ".hero-content>h2>span";
@@ -5,21 +8,33 @@ const highlightedTextElement = document.querySelector(highlightedText);
 const fish1 = ".fish-1";
 const fish2 = ".fish-2";
 
-gsap.registerPlugin(TextPlugin);
-gsap.registerPlugin(ScrollTrigger);
-
 const heroScrollIndicatorTween = gsap.to(heroScrollIndicator, {
   duration: 2,
   repeat: -1,
   yoyo: true,
   ease: "power1.inOut",
   y: 30,
+  scrollTrigger: {
+    trigger: hero,
+    start: "top center",
+    end: "bottom top",
+    toggleActions: "play pause resume reset",
+  },
 });
 
 const textsValues = ["Lorem Ipsum", "Dolor sit", "consectetur adipiscing"];
 let currentIndex = 0;
 
-const highlightTimeline = gsap.timeline({ repeat: -1, repeatDelay: 2 });
+const highlightTimeline = gsap.timeline({
+  repeat: -1,
+  repeatDelay: 2,
+  scrollTrigger: {
+    trigger: hero,
+    start: "top center",
+    end: "bottom top",
+    toggleActions: "play pause resume reset",
+  },
+});
 highlightTimeline
   .to(highlightedText, {
     duration: 1,
