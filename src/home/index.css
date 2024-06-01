@@ -74,6 +74,20 @@ nav {
   background-color: var(--secondary-color);
 }
 
+#scroll-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+}
+
+main {
+  height: 100%;
+  overflow: auto;
+}
+
 .container {
   padding-inline: 200px;
   width: 100%;
@@ -160,12 +174,13 @@ nav {
   background-color: var(--primary-color);
   display: flex;
   align-items: center;
+  position: relative;
 }
 
 #section-1 {
   height: 600px;
   width: 100%;
-  background: red;
+  background-color: #ffffff;
 }
 
 #section-2 {

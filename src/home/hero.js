@@ -1,6 +1,3 @@
-gsap.registerPlugin(TextPlugin);
-gsap.registerPlugin(ScrollTrigger);
-
 const hero = "#hero";
 const heroScrollIndicator = ".hero-scroll-icon-wrapper";
 const highlightedText = ".hero-content>h2>span";
@@ -52,7 +49,7 @@ TweenLite.set(fish1, {
 });
 
 TweenLite.set(fish2, {
-  x: "-30vw",
+  x: "-20vw",
   y: "-70vh",
 });
 
@@ -61,16 +58,20 @@ const fishesTimeline = gsap
   .to(fish1, {
     scrollTrigger: {
       trigger: hero,
-      scrub: true,
+      scrub: 0.001,
       start: "center center",
+      end: "bottom center",
+      scroller: "main",
     },
-    x: "-30vw",
+    x: "-25vw",
   })
   .to(fish2, {
     scrollTrigger: {
       trigger: hero,
-      scrub: true,
+      scrub: 0.001,
       start: "center center",
+      end: "bottom center",
+      scroller: "main",
     },
     x: "0",
   });
