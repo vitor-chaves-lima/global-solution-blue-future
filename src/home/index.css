@@ -4,12 +4,20 @@ nav {
   align-items: center;
   padding-inline: 25px;
   padding-block: 15px;
+  position: fixed;
+  width: 100%;
+  box-sizing: border-box;
 }
 
-nav h1 {
+#nav-home-btn {
   font-weight: bold;
   font-size: 1.75rem;
   z-index: 1;
+  border: none;
+  text-decoration: none;
+  color: black;
+  background-color: transparent;
+  cursor: pointer;
 }
 
 #nav-menu-btn {
@@ -26,7 +34,7 @@ nav h1 {
 #nav-menu-content {
   position: fixed;
   height: 100vh;
-  width: 50vw;
+  width: 50%;
   left: 0;
   top: -100vh;
   background-color: var(--primary-color);
@@ -41,15 +49,17 @@ nav h1 {
   gap: 10px;
 }
 
-#nav-menu-content > ul > li {
+#nav-menu-content > ul > li > button {
   font-size: 2rem;
+  background-color: transparent;
   color: var(--secondary-color);
+  border: none;
   border-bottom: 2px solid transparent;
   padding: 5px;
   transition: 0.3s border-bottom;
 }
 
-#nav-menu-content > ul > li:hover {
+#nav-menu-content > ul > li > button:hover {
   cursor: pointer;
   border-bottom: 2px solid var(--secondary-color);
 }
@@ -57,10 +67,51 @@ nav h1 {
 #nav-menu-animation {
   position: fixed;
   height: 100vh;
-  width: 50vw;
+  width: 50%;
   right: 0;
   bottom: -100vh;
   background-color: var(--secondary-color);
+}
+
+#hero {
+  height: 100vh;
+  width: 100%;
+}
+
+#section-1 {
+  height: 600px;
+  width: 100%;
+  background: red;
+}
+
+#section-2 {
+  height: 1200px;
+  width: 100%;
+  background: green;
+}
+
+#section-3 {
+  height: 800px;
+  width: 100%;
+  background: blue;
+}
+
+#section-4 {
+  height: 1600px;
+  width: 100%;
+  background: pink;
+}
+
+#section-5 {
+  height: 500px;
+  width: 100%;
+  background: brown;
+}
+
+#section-6 {
+  height: 1000px;
+  width: 100%;
+  background: purple;
 }
 
 @media (max-width: 576px) {

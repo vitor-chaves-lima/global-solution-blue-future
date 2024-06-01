@@ -4,7 +4,8 @@ const secondaryColor = "#a6d1ff";
 const navMenuButton = "#nav-menu-btn";
 const navMenuContent = "#nav-menu-content";
 const navMenuAnimation = "#nav-menu-animation";
-const navTitle = "nav>h1";
+const navSectionButton = "#nav-section-btn";
+const navHomeButton = "#nav-home-btn";
 
 let isNavMenuOpen = false;
 
@@ -29,7 +30,7 @@ const generateNavMenuTimeline = (mobile) => {
     0
   );
   navMenuTimeline.fromTo(
-    navTitle,
+    navHomeButton,
     { color: "black", duration: 0.3 },
     { color: secondaryColor, duration: 0.3 },
     "+.1"
@@ -53,7 +54,41 @@ const generateNavMenuTimeline = (mobile) => {
 };
 
 window.addEventListener("load", () => {
-  document.querySelector(navMenuButton).onclick = toggleNavMenu;
+  document
+    .querySelector(navMenuButton)
+    .addEventListener("click", toggleNavMenu);
+
+  document.querySelector(navHomeButton).addEventListener("click", () => {
+    if (isNavMenuOpen) {
+      navMenuTimeline.eventCallback("onReverseComplete", () => {
+        document.getElementById("hero").scrollIntoView({ behavior: "smooth" });
+        toggleNavMenu();
+        navMenuTimeline.eventCallback("onReverseComplete", () => {});
+      });
+
+      navMenuTimeline.reverse();
+    } else {
+      document.getElementById("hero").scrollIntoView({ behavior: "smooth" });
+    }
+  });
+
+  document.querySelectorAll(navSectionButton).forEach((b) => {
+    b.addEventListener("click", function () {
+      const targetId = this.getAttribute("data-target");
+
+      navMenuTimeline.eventCallback("onReverseComplete", () => {
+        document
+          .getElementById(targetId)
+          .scrollIntoView({ behavior: "smooth" });
+
+        toggleNavMenu();
+
+        navMenuTimeline.eventCallback("onReverseComplete", () => {});
+      });
+
+      navMenuTimeline.reverse();
+    });
+  });
 });
 
 window.addEventListener("mobileResolution", () => {
@@ -77,7 +112,9 @@ const toggleNavMenu = () => {
 
   if (isNavMenuOpen) {
     navMenuTimeline.play();
+    document.body.style.overflow = "hidden";
   } else {
     navMenuTimeline.reverse();
+    document.body.style.overflow = "auto";
   }
 };
