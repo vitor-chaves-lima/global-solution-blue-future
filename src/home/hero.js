@@ -25,17 +25,17 @@ const heroScrollIndicatorTween = gsap.to(heroScrollIndicator, {
 const textsValues = ["Lorem Ipsum", "Dolor sit", "consectetur adipiscing"];
 let currentIndex = 0;
 
-const highlightTimeline = gsap.timeline({
-  repeat: -1,
-  repeatDelay: 2,
-  scrollTrigger: {
-    trigger: hero,
-    start: "top center",
-    end: "bottom top",
-    toggleActions: "play pause resume reset",
-  },
-});
-highlightTimeline
+const highlightTimeline = gsap
+  .timeline({
+    repeat: -1,
+    repeatDelay: 2,
+    scrollTrigger: {
+      trigger: hero,
+      start: "top center",
+      end: "bottom top",
+      toggleActions: "play pause resume reset",
+    },
+  })
   .to(highlightedText, {
     duration: 1,
     opacity: 0,
@@ -56,20 +56,21 @@ TweenLite.set(fish2, {
   y: "-70vh",
 });
 
-gsap.to(fish1, {
-  scrollTrigger: {
-    trigger: hero,
-    scrub: true,
-    start: "center center",
-  },
-  x: "-30vw",
-});
-
-gsap.to(fish2, {
-  scrollTrigger: {
-    trigger: hero,
-    scrub: true,
-    start: "center center",
-  },
-  x: "0",
-});
+const fishesTimeline = gsap
+  .timeline({})
+  .to(fish1, {
+    scrollTrigger: {
+      trigger: hero,
+      scrub: true,
+      start: "center center",
+    },
+    x: "-30vw",
+  })
+  .to(fish2, {
+    scrollTrigger: {
+      trigger: hero,
+      scrub: true,
+      start: "center center",
+    },
+    x: "0",
+  });
