@@ -181,6 +181,9 @@ main {
 #section-1 {
   width: 100%;
   background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  position: relative;
 }
 
 .section-1-content {
@@ -197,7 +200,7 @@ main {
   justify-content: center;
   gap: 25px;
   width: 50%;
-  height: 50vh;
+  height: 550px;
 }
 
 .section-1-content > div > h3 {
@@ -207,6 +210,23 @@ main {
 
 .section-1-content > div > p {
   font-size: 1.25rem;
+}
+
+.section-1-background {
+  display: flex;
+  justify-content: end;
+  align-items: start;
+  height: 100%;
+  width: 100%;
+  padding-block: 40px;
+  position: absolute;
+  box-sizing: border-box;
+}
+
+.section-1-background {
+  fill: none;
+  stroke-width: 5px;
+  stroke: var(--primary-color);
 }
 
 #section-2 {
