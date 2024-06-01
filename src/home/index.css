@@ -1,0 +1,22 @@
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-inline: 25px;
+  padding-block: 15px;
+}
+
+nav h1 {
+  font-weight: bold;
+  font-size: 1.75rem;
+}
+
+.nav-menu-btn {
+  border-radius: 50%;
+  padding: 5px;
+  cursor: pointer;
+  width: 65px;
+  height: 65px;
+  background-color: transparent;
+  border: none;
+}
