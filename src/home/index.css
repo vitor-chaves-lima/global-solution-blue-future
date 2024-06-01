@@ -9,9 +9,10 @@ nav {
 nav h1 {
   font-weight: bold;
   font-size: 1.75rem;
+  z-index: 1;
 }
 
-.nav-menu-btn {
+#nav-menu-btn {
   border-radius: 50%;
   padding: 5px;
   cursor: pointer;
@@ -19,4 +20,55 @@ nav h1 {
   height: 65px;
   background-color: transparent;
   border: none;
+  z-index: 1;
+}
+
+#nav-menu-content {
+  position: fixed;
+  height: 100vh;
+  width: 50vw;
+  left: 0;
+  top: -100vh;
+  background-color: var(--primary-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#nav-menu-content > ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#nav-menu-content > ul > li {
+  font-size: 2rem;
+  color: var(--secondary-color);
+  border-bottom: 2px solid transparent;
+  padding: 5px;
+  transition: 0.3s border-bottom;
+}
+
+#nav-menu-content > ul > li:hover {
+  cursor: pointer;
+  border-bottom: 2px solid var(--secondary-color);
+}
+
+#nav-menu-animation {
+  position: fixed;
+  height: 100vh;
+  width: 50vw;
+  right: 0;
+  bottom: -100vh;
+  background-color: var(--secondary-color);
+}
+
+@media (max-width: 576px) {
+  #nav-menu-content {
+    width: 100vw;
+  }
+
+  #nav-menu-animation {
+    display: none;
+  }
 }
