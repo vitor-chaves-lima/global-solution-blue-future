@@ -10,13 +10,105 @@
   </head>
   <body>
     <nav>
-      <h1>Title</h1>
-      <button class="nav-menu-btn">
+      <button id="nav-home-btn"><h1>Title</h1></button>
+      <button id="nav-menu-btn">
         <i class="fa-solid fa-bars fa-xl"></i>
       </button>
+
+      <div id="nav-menu-content">
+        <ul>
+          <li>
+            <button id="nav-section-btn" data-target="#section-1">
+              Section 1
+            </button>
+          </li>
+          <li>
+            <button id="nav-section-btn" data-target="#section-2">
+              Section 2
+            </button>
+          </li>
+          <li>
+            <button id="nav-section-btn" data-target="#section-3">
+              Section 3
+            </button>
+          </li>
+          <li>
+            <button id="nav-section-btn" data-target="#section-4">
+              Section 4
+            </button>
+          </li>
+          <li>
+            <button id="nav-section-btn" data-target="#section-5">
+              Section 5
+            </button>
+          </li>
+          <li>
+            <button id="nav-section-btn" data-target="#section-6">
+              Section 6
+            </button>
+          </li>
+        </ul>
+      </div>
+      <div id="nav-menu-animation"></div>
     </nav>
+
+    <div id="scroll-container">
+      <main>
+        <section id="hero">
+          <div class="container">
+            <div class="section-content-wrapper">
+              <div class="hero-content">
+                <h2>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing
+                  <span></span>
+                </h2>
+              </div>
+
+              <div class="hero-scroll-icon-wrapper">
+                <i class="fa-solid fa-chevron-down fa-xl"></i>
+              </div>
+            </div>
+          </div>
+          <div class="section-background-wrapper">
+            <div class="hero-background">
+              <img
+                class="plants"
+                alt="Hero Background"
+                src="../../public/assets/images/plants.webp"
+              />
+
+              <img
+                class="fish-1"
+                alt="Fish 1"
+                src="../../public/assets/images/fish-1.webp"
+              />
+
+              <img
+                class="fish-2"
+                alt="Fish 2"
+                src="../../public/assets/images/fish-2.webp"
+              />
+            </div>
+          </div>
+        </section>
+        <section id="section-1"></section>
+        <section id="section-2"></section>
+        <section id="section-3"></section>
+        <section id="section-4"></section>
+        <section id="section-5"></section>
+        <section id="section-6"></section>
+      </main>
+    </div>
   </body>
 
-  <script src="../../public/assets/fontawesome/js/fontawesome.min.js"></script>
-  <script src="../../public/assets/fontawesome/js/solid.min.js"></script>
+  <script src="../../public/vendor/fontawesome/js/fontawesome.min.js"></script>
+  <script src="../../public/vendor/fontawesome/js/solid.min.js"></script>
+  <script src="../../public/vendor/gsap/gsap.min.js"></script>
+  <script src="../../public/vendor/gsap/TextPlugin.min.js"></script>
+  <script src="../../public/vendor/gsap/ScrollTrigger.min.js"></script>
+  <script src="../../public/vendor/smooth-scrollbar/smooth-scrollbar.min.js"></script>
+  <script src="../../public/js/resolution-check.js"></script>
+  <script src="./setup.js"></script>
+  <script src="./navigation.js"></script>
+  <script src="./hero.js"></script>
 </html>
