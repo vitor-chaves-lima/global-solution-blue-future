@@ -10,7 +10,7 @@ const scrollbar = Scrollbar.init(
   document.querySelector("#scroll-container main"),
   {
     damping: 0.01,
-    thumbMinSize: 20,
+    thumbMinSize: 1,
   }
 );
 

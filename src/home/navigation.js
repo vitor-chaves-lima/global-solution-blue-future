@@ -9,6 +9,15 @@ const navHomeButton = "#nav-home-btn";
 
 let isNavMenuOpen = false;
 
+const scrollTo = (elementSelector) => {
+  const element = document.querySelector(elementSelector);
+
+  if (element) {
+    const offset = element.offsetTop;
+    scrollbar.scrollTo(0, offset, 1000);
+  }
+};
+
 const navMenuTimeline = gsap.timeline({
   paused: true,
   duration: 0.4,
@@ -61,26 +70,23 @@ window.addEventListener("load", () => {
   document.querySelector(navHomeButton).addEventListener("click", () => {
     if (isNavMenuOpen) {
       navMenuTimeline.eventCallback("onReverseComplete", () => {
-        document.getElementById("hero").scrollIntoView({ behavior: "smooth" });
+        scrollTo(hero);
         toggleNavMenu();
         navMenuTimeline.eventCallback("onReverseComplete", () => {});
       });
 
       navMenuTimeline.reverse();
     } else {
-      document.getElementById("hero").scrollIntoView({ behavior: "smooth" });
+      scrollTo(hero);
     }
   });
 
   document.querySelectorAll(navSectionButton).forEach((b) => {
     b.addEventListener("click", function () {
-      const targetId = this.getAttribute("data-target");
+      const target = this.getAttribute("data-target");
 
       navMenuTimeline.eventCallback("onReverseComplete", () => {
-        document
-          .getElementById(targetId)
-          .scrollIntoView({ behavior: "smooth" });
-
+        scrollTo(target);
         toggleNavMenu();
 
         navMenuTimeline.eventCallback("onReverseComplete", () => {});
