@@ -223,10 +223,17 @@ main {
   box-sizing: border-box;
 }
 
-.section-1-background {
-  fill: none;
+.section-1-background > svg {
+  width: 500px;
+  height: 100%;
+}
+
+.section-1-background > svg > .main-circle {
+  fill: transparent;
   stroke-width: 5px;
   stroke: var(--primary-color);
+  position: fixed;
+  top: 100px;
 }
 
 #section-2 {
