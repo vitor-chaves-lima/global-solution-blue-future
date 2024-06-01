@@ -15,7 +15,7 @@ nav {
   z-index: 1;
   border: none;
   text-decoration: none;
-  color: black;
+  color: var(--secondary-color);
   background-color: transparent;
   cursor: pointer;
 }
@@ -73,9 +73,52 @@ nav {
   background-color: var(--secondary-color);
 }
 
+.container {
+  padding-inline: 200px;
+  width: 100%;
+  height: 100%;
+}
+
+.section-content-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding-block: 80px;
+  box-sizing: border-box;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: auto;
+}
+
+.hero-content > h2 {
+  font-size: 3.5em;
+  width: 50%;
+  max-width: 600px;
+  color: var(--secondary-color);
+}
+
+.hero-content > h2 > span {
+  color: #ffffff;
+}
+
+.hero-scroll-icon-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  color: white;
+  box-sizing: border-box;
+}
+
 #hero {
   height: 100vh;
   width: 100%;
+  background-color: var(--primary-color);
+  display: flex;
+  align-items: center;
 }
 
 #section-1 {
@@ -121,5 +164,14 @@ nav {
 
   #nav-menu-animation {
     display: none;
+  }
+
+  .container {
+    padding: 30px;
+  }
+
+  .hero-content > h2 {
+    font-size: 2rem;
+    width: 100%;
   }
 }

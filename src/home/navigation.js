@@ -29,24 +29,24 @@ const generateNavMenuTimeline = (mobile) => {
     { bottom: 0, duration: 0.4 },
     0
   );
-  navMenuTimeline.fromTo(
-    navHomeButton,
-    { color: "black", duration: 0.3 },
-    { color: secondaryColor, duration: 0.3 },
-    "+.1"
-  );
+  // navMenuTimeline.fromTo(
+  //   navHomeButton,
+  //   { color: "black", duration: 0.3 },
+  //   { color: secondaryColor, duration: 0.3 },
+  //   "+.1"
+  // );
 
   if (mobile) {
     navMenuTimeline.fromTo(
       navMenuButton,
-      { color: "black", duration: 0.3 },
+      { color: secondaryColor, duration: 0.3 },
       { color: secondaryColor, duration: 0.3 },
       "+.1"
     );
   } else {
     navMenuTimeline.fromTo(
       navMenuButton,
-      { color: "black", duration: 0.3 },
+      { color: secondaryColor, duration: 0.3 },
       { color: primaryColor, duration: 0.1 },
       "+.3"
     );
