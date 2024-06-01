@@ -19,56 +19,42 @@ const heroScrollIndicatorTween = gsap.to(heroScrollIndicator, {
 const textsValues = ["Lorem Ipsum", "Dolor sit", "consectetur adipiscing"];
 let currentIndex = 0;
 
-function updateText() {
-  highlightedTextElement.innerText = textsValues[currentIndex];
-  currentIndex = (currentIndex + 1) % textsValues.length;
-}
-
 const highlightTimeline = gsap.timeline({ repeat: -1, repeatDelay: 2 });
 highlightTimeline
-  .to(highlightedText, { duration: 1, opacity: 0, onComplete: updateText })
+  .to(highlightedText, {
+    duration: 1,
+    opacity: 0,
+    onComplete: () => {
+      highlightedTextElement.innerText = textsValues[currentIndex];
+      currentIndex = (currentIndex + 1) % textsValues.length;
+    },
+  })
   .to(highlightedText, { duration: 1, opacity: 1 });
 
-updateText();
+TweenLite.set(fish1, {
+  x: "0",
+  y: "-45vh",
+});
 
-gsap.fromTo(
-  fish1,
-  {
-    scrollTrigger: {
-      trigger: hero,
-      scrub: true,
-      start: "top center",
-    },
-    x: 300,
-  },
-  {
-    scrollTrigger: {
-      trigger: hero,
-      scrub: true,
-      start: "top center",
-    },
-    x: -400,
-  }
-);
+TweenLite.set(fish2, {
+  x: "-30vw",
+  y: "-70vh",
+});
 
-gsap.fromTo(
-  fish2,
-  {
-    scrollTrigger: {
-      trigger: hero,
-      scrub: true,
-      start: "top center",
-    },
-    y: 120,
-    x: -1000,
+gsap.to(fish1, {
+  scrollTrigger: {
+    trigger: hero,
+    scrub: true,
+    start: "center center",
   },
-  {
-    scrollTrigger: {
-      trigger: hero,
-      scrub: true,
-      start: "top center",
-    },
-    x: 100,
-    y: 50,
-  }
-);
+  x: "-30vw",
+});
+
+gsap.to(fish2, {
+  scrollTrigger: {
+    trigger: hero,
+    scrub: true,
+    start: "center center",
+  },
+  x: "0",
+});

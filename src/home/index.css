@@ -99,11 +99,9 @@ nav {
 
 .hero-background {
   display: flex;
-  color: red;
   justify-content: end;
   align-items: end;
   height: 100%;
-  padding-inline: 50px;
 }
 
 .hero-background > .plants {
@@ -112,7 +110,6 @@ nav {
   max-width: 800px;
   max-height: 500px;
   position: absolute;
-  right: 80px;
 }
 
 .hero-background > .fish-1 {
@@ -121,7 +118,6 @@ nav {
   max-width: 200px;
   max-height: 200px;
   position: absolute;
-  top: 150px;
 }
 
 .hero-background > .fish-2 {
@@ -130,7 +126,6 @@ nav {
   max-width: 200px;
   max-height: 200px;
   position: absolute;
-  top: 350px;
 }
 
 .hero-content {
