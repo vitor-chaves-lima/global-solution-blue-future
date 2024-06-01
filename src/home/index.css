@@ -7,6 +7,7 @@ nav {
   position: fixed;
   width: 100%;
   box-sizing: border-box;
+  z-index: 20;
 }
 
 #nav-home-btn {
@@ -79,12 +80,57 @@ nav {
   height: 100%;
 }
 
+.section-background-wrapper {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background-color: transparent;
+}
+
 .section-content-wrapper {
   display: flex;
   flex-direction: column;
   height: 100%;
   padding-block: 80px;
   box-sizing: border-box;
+  z-index: 10;
+  position: relative;
+}
+
+.hero-background {
+  display: flex;
+  color: red;
+  justify-content: end;
+  align-items: end;
+  height: 100%;
+  padding-inline: 50px;
+}
+
+.hero-background > .plants {
+  width: 100%;
+  height: 100%;
+  max-width: 800px;
+  max-height: 500px;
+  position: absolute;
+  right: 80px;
+}
+
+.hero-background > .fish-1 {
+  width: 100%;
+  height: 100%;
+  max-width: 200px;
+  max-height: 200px;
+  position: absolute;
+  top: 150px;
+}
+
+.hero-background > .fish-2 {
+  width: 100%;
+  height: 100%;
+  max-width: 200px;
+  max-height: 200px;
+  position: absolute;
+  top: 350px;
 }
 
 .hero-content {
