@@ -1,6 +1,7 @@
 const section2 = "#section-2";
 const section2SectionContent = `.section-2-content`;
-const section2StepWrapper = `${section2SectionContent}>.step-wrapper`;
+const section2Left = `${section2SectionContent}>.left`;
+const section2Center = `${section2SectionContent}>.center`;
 
 ScrollTrigger.create({
   trigger: section2,
@@ -32,11 +33,21 @@ ScrollTrigger.create({
 const right = document.querySelector(".right");
 
 ScrollTrigger.create({
-  trigger: section2,
+  trigger: section2SectionContent,
   scrub: true,
   start: "top top",
   end: "bottom center",
-  pin: ".left",
+  pin: section2Left,
+  pinSpacing: false,
+  pinType: "sticky",
+});
+
+ScrollTrigger.create({
+  trigger: section2SectionContent,
+  scrub: true,
+  start: "top top",
+  end: "bottom center",
+  pin: section2Center,
   pinSpacing: false,
   pinType: "sticky",
 });
