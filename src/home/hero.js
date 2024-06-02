@@ -61,7 +61,6 @@ const fishesTimeline = gsap
       scrub: 0.001,
       start: "center center",
       end: "bottom center",
-      scroller: "main",
     },
     x: "-25vw",
   })
@@ -71,7 +70,6 @@ const fishesTimeline = gsap
       scrub: 0.001,
       start: "center center",
       end: "bottom center",
-      scroller: "main",
     },
     x: "0",
   });
@@ -101,5 +99,4 @@ ScrollTrigger.create({
     ),
   toggleActions: "restart none none reverse",
   preventOverlaps: true,
-  scroller: "main",
 });

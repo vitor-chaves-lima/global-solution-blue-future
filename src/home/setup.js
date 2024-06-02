@@ -1,20 +1,19 @@
 gsap.registerPlugin(TextPlugin);
 gsap.registerPlugin(ScrollTrigger);
 
-window.addEventListener("load", () => {
-  ScrollTrigger.refresh(); // RESET SCROLL TRIGGER TO PREVENT SCRUB ERRORS
+const main = document.querySelector("main");
+
+const scrollbar = Scrollbar.init(main, {
+  damping: 0.01,
+  delegateTo: document,
 });
 
-// INITIALIZE SCROLLBAR
-const scrollbar = Scrollbar.init(
-  document.querySelector("#scroll-container main"),
-  {
-    damping: 0.01,
-    thumbMinSize: 1,
-  }
-);
+scrollbar.setPosition(0, 0);
+scrollbar.track.xAxis.element.remove();
 
-ScrollTrigger.scrollerProxy("#scroll-container main", {
+scrollbar.addListener(ScrollTrigger.update);
+
+ScrollTrigger.scrollerProxy(document.body, {
   scrollTop(value) {
     if (arguments.length) {
       scrollbar.scrollTop = value;
@@ -29,9 +28,4 @@ ScrollTrigger.scrollerProxy("#scroll-container main", {
       height: window.innerHeight,
     };
   },
-  pinType: document.querySelector("#scroll-container main").style.transform
-    ? "transform"
-    : "fixed",
 });
-
-scrollbar.addListener(ScrollTrigger.update);
