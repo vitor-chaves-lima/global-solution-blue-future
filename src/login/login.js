@@ -1,11 +1,11 @@
 const emailInput = document.querySelector("#email-input");
 const passwordInput = document.querySelector("#password-input");
 const buttonSubmit = document.querySelector("#btn-submit");
-isSigned = false;
+let isSigned = false;
 
 buttonSubmit.addEventListener("click", () => {
-    email = emailInput.value;
-    password = passwordInput.value;
+    const email = emailInput.value;
+    const password = passwordInput.value;
 
     if (email === "teste@gmail.com" && password === "pass123") {
         isSigned = true;
@@ -20,6 +20,7 @@ buttonSubmit.addEventListener("click", () => {
 
 document.addEventListener("DOMContentLoaded", () => {
     if (localStorage.getItem("signedBool") == true) {
+        alert("Usuário já logado na plataforma! Redirecionando para a página de dashboard...")
         return window.location.assign("../dashboard/dashboard.html");
     }
 });
