@@ -14,13 +14,24 @@ buttonSubmit.addEventListener("click", () => {
         return alert("Email inválido");
     }
     
-    password = passwordInput.value;
-    confirmation = confirmationInput.value;
+    const password = passwordInput.value;
+    const confirmation = confirmationInput.value;
     
     if (password !== confirmation) {
         return alert("Senhas não correspondem, tente novamente.");
     }
     
     isSigned = true;
-    localStorage.setItem("signedBool", isSigned)
+    localStorage.setItem("signedBool", isSigned);
+    alert("Cadastro concluído com sucesso! Redirecionando usuário para a página de dashboard...");
+    return location.assign("../dashboard/dashboard.html");
 });
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    console.log(localStorage.getItem("signedBool"));
+    if (localStorage.getItem("signedBool") === "true") {
+        alert("Usuário já logado na plataforma! Redirecionando para a página de dashboard...");
+        return location.assign("../dashboard/dashboard.html");
+    }
+})
