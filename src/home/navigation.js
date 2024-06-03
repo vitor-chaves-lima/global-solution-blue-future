@@ -33,30 +33,29 @@ const generateNavMenuTimeline = (mobile) => {
     0
   );
   navMenuTimeline.fromTo(
+    navHomeButton,
+    { duration: 0.3 },
+    { color: secondaryColor, duration: 0.3 },
+    "+.1"
+  );
+  navMenuTimeline.fromTo(
     navMenuAnimation,
     { bottom: "-100vh", duration: 0.4 },
     { bottom: 0, duration: 0.4 },
     0
   );
-  // navMenuTimeline.fromTo(
-  //   navHomeButton,
-  //   { color: "black", duration: 0.3 },
-  //   { color: secondaryColor, duration: 0.3 },
-  //   "+.1"
-  // );
-
   if (mobile) {
     navMenuTimeline.fromTo(
       navMenuButton,
       { color: secondaryColor, duration: 0.3 },
-      { color: secondaryColor, duration: 0.3 },
+      { color: secondaryColor, backgroundColor: "transparent", duration: 0.3 },
       "+.1"
     );
   } else {
     navMenuTimeline.fromTo(
       navMenuButton,
       { color: secondaryColor, duration: 0.3 },
-      { color: primaryColor, duration: 0.1 },
+      { color: primaryColor, backgroundColor: "transparent", duration: 0.1 },
       "+.3"
     );
   }
