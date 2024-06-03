@@ -25,5 +25,4 @@ ScrollTrigger.create({
     ),
   toggleActions: "restart none none reverse",
   preventOverlaps: true,
-  scroller: "main",
 });

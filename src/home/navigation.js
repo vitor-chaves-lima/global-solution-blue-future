@@ -9,6 +9,18 @@ const navHomeButton = "#nav-home-btn";
 
 let isNavMenuOpen = false;
 
+const navmenuOpenEvent = new CustomEvent("navmenu", {
+  detail: {
+    open: true,
+  },
+});
+
+const navmenuCloseEvent = new CustomEvent("navmenu", {
+  detail: {
+    open: false,
+  },
+});
+
 const scrollTo = (elementSelector) => {
   const element = document.querySelector(elementSelector);
 
@@ -69,8 +81,8 @@ window.addEventListener("load", () => {
   document.querySelector(navHomeButton).addEventListener("click", () => {
     if (isNavMenuOpen) {
       navMenuTimeline.eventCallback("onReverseComplete", () => {
-        scrollTo(hero);
         toggleNavMenu();
+        scrollTo(hero);
         navMenuTimeline.eventCallback("onReverseComplete", () => {});
       });
 
@@ -85,9 +97,8 @@ window.addEventListener("load", () => {
       const target = this.getAttribute("data-target");
 
       navMenuTimeline.eventCallback("onReverseComplete", () => {
-        scrollTo(target);
         toggleNavMenu();
-
+        scrollTo(target);
         navMenuTimeline.eventCallback("onReverseComplete", () => {});
       });
 
@@ -112,14 +123,20 @@ window.addEventListener("desktopResolution", () => {
   }
 });
 
+window.addEventListener("navmenu", (e) => {
+  if (e.detail.open === true) {
+    navMenuTimeline.play();
+  } else if (e.detail.open === false) {
+    navMenuTimeline.reverse();
+  }
+});
+
 const toggleNavMenu = () => {
   isNavMenuOpen = !isNavMenuOpen;
 
   if (isNavMenuOpen) {
-    navMenuTimeline.play();
-    document.body.style.overflow = "hidden";
+    window.dispatchEvent(navmenuOpenEvent);
   } else {
-    navMenuTimeline.reverse();
-    document.body.style.overflow = "auto";
+    window.dispatchEvent(navmenuCloseEvent);
   }
 };
