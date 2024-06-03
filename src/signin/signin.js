@@ -3,8 +3,6 @@ const passwordInput = document.querySelector("#password-input");
 const confirmationInput = document.querySelector("#password__confirmation-input");
 const buttonSubmit = document.querySelector("#btn-submit");
 
-let isSigned = false;
-
 buttonSubmit.addEventListener("click", () => {
     const email = emailInput.value;
     if (
@@ -21,8 +19,7 @@ buttonSubmit.addEventListener("click", () => {
         return alert("Senhas não correspondem, tente novamente.");
     }
     
-    isSigned = true;
-    localStorage.setItem("signedBool", isSigned);
+    localStorage.setItem("signedBool", true);
     alert("Cadastro concluído com sucesso! Redirecionando usuário para a página de dashboard...");
     return location.assign("../dashboard/dashboard.html");
 });
