@@ -1,0 +1,105 @@
+@import url(../../public/css/global.css);
+
+body {
+    background-color: var(--primary-color);
+}
+
+.navbar {
+    text-align: center;
+    padding-top: 1em;
+}
+
+.navbar h1 {
+    color: var(--secondary-color);
+    font-size: 1.75rem;
+}
+
+.container {
+    height: 100vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 20px;
+}
+
+.fish1__content, .fish2__content {
+    height: 50%;
+    display: flex;
+}
+
+.fish1__content img, .fish2__content img {
+    height: 10rem;
+    width: 10rem;
+}
+
+.fish1__content {
+    align-items: flex-end;
+}
+
+.container__content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    height: 60%;
+}
+
+.container__input {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    justify-content: center;
+    height: 100%;
+    margin: 0 auto;
+    align-items: center;
+    color: var(--primary-color);
+    background-color: var(--secondary-color);
+    border-radius: 10px;
+    padding: 2em 4em;
+}
+
+.text__input {
+    background-color: transparent;
+    border-style: none;
+    border-bottom: 1px solid var(--primary-color);
+}
+
+.text__input::placeholder {
+    color: var(--primary-color);
+}
+
+
+#btn-submit {
+    color: var(--primary-color);
+    background-color: transparent;
+    border: 1px solid var(--primary-color);
+    padding: 0.7rem 1.5rem;
+    border-radius: 5px;
+}
+
+#btn-submit:hover {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    cursor: pointer;
+    transition-duration: 500ms;
+}
+
+.switch__in {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    color: var(--secondary-color);
+    align-items: center;
+}
+
+.switch__in a {
+    color: var(--secondary-color);
+    padding: 0.3em;
+    border-radius: 3px;
+}
+
+.switch__in a:hover {
+    color: var(--primary-color);
+    background-color: var(--secondary-color);
+    text-decoration: none;
+    transition-duration: 500ms;
+}
