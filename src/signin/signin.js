@@ -34,4 +34,4 @@ document.addEventListener("DOMContentLoaded", () => {
         alert("Usuário já logado na plataforma! Redirecionando para a página de dashboard...");
         return location.assign("../dashboard/dashboard.html");
     }
-})
+});
