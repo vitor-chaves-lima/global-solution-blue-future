@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="../../public/css/global.css">
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <ul class="navbar__list">
+                <li class="navbar__item">
+                    <p>Gerenciar produtos</p>
+                </li>
+                <li class="navbar__item">
+                    <button id="btn-signout" class="btn__signout">Sair</button>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main class="main">
+        <section class="container">
+            <table>
+                <thead>
+                    <tr class="indexes">
+                        <th>Tipo da embalagem</th>
+                        <th>Empresa</th>
+                        <th>Token</th>
+                        <th>Créditos recebidos</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Garrafa plástica</td>
+                        <td>Cola Enterprises</td>
+                        <td>0xo34563oi4j6n3</td>
+                        <td>+2600</td>
+                    </tr>
+                    <tr>
+                        <td>Sacola plástica</td>
+                        <td>Carrefive</td>
+                        <td>0xooin423o6no4</td>
+                        <td>+3000</td>
+                    </tr>
+                    <tr>
+                        <td>Pente plástico</td>
+                        <td>Fênetre</td>
+                        <td>0xo34563oi4j6n3o</td>
+                        <td>+1500</td>
+                    </tr>
+                    <tr>
+                        <td>Lata metálica</td>
+                        <td>Cola Enterprises</td>
+                        <td>0xo34563oi4j6n3oi</td>
+                        <td>+4500</td>
+                    </tr>
+                </tbody>
+            </table>
+            <img class="img__plant" src="../../public/assets/images/plants.webp" alt="Sea plants">
+        </section>
+    </main>
+    <script src="dashboard.js"></script>
+</body>
+</html>
