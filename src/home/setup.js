@@ -2,10 +2,20 @@ gsap.registerPlugin(TextPlugin);
 gsap.registerPlugin(ScrollTrigger);
 
 const main = document.querySelector("main");
+const platformAccessButtons = document.querySelector("#platform-access-btns");
 
 const scrollbar = Scrollbar.init(main, {
   damping: 0.01,
   delegateTo: document,
+});
+
+window.addEventListener("load", () => {
+  const isLogged = localStorage.getItem("signedBool") == "true";
+  if (isLogged) {
+    platformAccessButtons.innerHTML = `<a class="btn" href="../dashboard">Entrar na plataforma</a>`;
+  } else {
+    platformAccessButtons.innerHTML = `<a class="btn" href="../signin">Cadastrar</a><a href="../login">Já tenho uma conta</a>`;
+  }
 });
 
 scrollbar.setPosition(0, 0);
