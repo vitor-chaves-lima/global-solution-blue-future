@@ -316,15 +316,49 @@ nav {
 }
 
 #section-4 {
-  height: 1600px;
+  height: 100vh;
   width: 100%;
   background: pink;
 }
 
 #section-5 {
-  height: 500px;
+  height: 100vh;
   width: 100%;
-  background: brown;
+  background-color: var(--primary-color);
+}
+
+.section-content-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100%;
+  width: 100%;
+}
+
+.section-content-wrapper > .card {
+  width: 50%;
+  height: 25vh;
+  color: var(--secondary-color);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+}
+
+.section-content-wrapper > .card > h3 {
+  font-size: 1.7rem;
+  max-width: 80%;
+}
+
+.section-content-wrapper > .card > p {
+  font-size: 1.2rem;
+  max-width: 80%;
+}
+
+.section-content-wrapper > .card.right {
+  margin-left: 50%;
+  align-items: end;
+  text-align: end;
 }
 
 #section-6 {
