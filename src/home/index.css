@@ -310,9 +310,53 @@ nav {
 }
 
 #section-3 {
-  height: 800px;
+  height: 60vh;
   width: 100%;
-  background: blue;
+  box-sizing: border-box;
+}
+
+.section-3-content {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.section-3-content > .card {
+  width: 33.33%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.section-3-content > .card > div {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  justify-content: center;
+}
+
+.section-3-content > .card > .image-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.section-3-content > .card > .image-wrapper > img {
+  width: 60%;
+  height: 60%;
+  min-width: 200px;
+  min-height: 200px;
+}
+
+.section-3-content > .card > .card-content > h3 {
+  font-size: 1.7rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.section-3-content > .card > .card-content > p {
+  font-size: 1.1rem;
+  text-align: center;
 }
 
 #section-4 {
