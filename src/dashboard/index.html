@@ -1,66 +1,186 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dashboard</title>
-    <link rel="stylesheet" href="../../public/css/global.css">
-    <link rel="stylesheet" href="dashboard.css">
-</head>
-<body>
+    <link rel="stylesheet" href="../../public/css/global.css" />
+    <link rel="stylesheet" href="dashboard.css" />
+  </head>
+  <body>
     <header class="header">
-        <nav class="navbar">
-            <ul class="navbar__list">
-                <li class="navbar__item">
-                    <p>Gerenciar produtos</p>
-                </li>
-                <li class="navbar__item">
-                    <button id="btn-signout" class="btn__signout">Sair</button>
-                </li>
-            </ul>
-        </nav>
+      <nav class="navbar">
+        <ul class="navbar__list">
+          <li class="navbar__item">
+            <p>Gerenciar produtos</p>
+          </li>
+          <li class="navbar__item">
+            <button id="btn-signout" class="btn__signout">Sair</button>
+          </li>
+        </ul>
+      </nav>
     </header>
     <main class="main">
-        <section class="container">
-            <table>
-                <thead>
-                    <tr class="indexes">
-                        <th>Tipo da embalagem</th>
-                        <th>Empresa</th>
-                        <th>Token</th>
-                        <th>Créditos recebidos</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Garrafa plástica</td>
-                        <td>Cola Enterprises</td>
-                        <td>0xo34563oi4j6n3</td>
-                        <td>+2600</td>
-                    </tr>
-                    <tr>
-                        <td>Sacola plástica</td>
-                        <td>Carrefive</td>
-                        <td>0xooin423o6no4</td>
-                        <td>+3000</td>
-                    </tr>
-                    <tr>
-                        <td>Pente plástico</td>
-                        <td>Fênetre</td>
-                        <td>0xo34563oi4j6n3o</td>
-                        <td>+1500</td>
-                    </tr>
-                    <tr>
-                        <td>Lata metálica</td>
-                        <td>Cola Enterprises</td>
-                        <td>0xo34563oi4j6n3oi</td>
-                        <td>+4500</td>
-                    </tr>
-                </tbody>
-            </table>
-            <img class="img__plant" src="../../public/assets/images/plants.webp" alt="Sea plants">
-        </section>
+      <section class="container">
+        <div class="dashboard">
+          <div><canvas id="chart"></canvas></div>
+
+          <div>
+            <gmpx-api-loader
+              key="AIzaSyAqdaZiYlrSRGXkFRxybaLlR_GC0qxy4a4"
+              solution-channel="GMP_GE_mapsandplacesautocomplete_v1"
+            >
+            </gmpx-api-loader>
+            <gmp-map center="-14.2350,-51.9253" zoom="3" map-id="blue">
+              <!-- Marcadores no litoral de São Paulo -->
+
+              <!-- Marcador azul para Santos -->
+              <gmp-advanced-marker position="-23.9674,-46.3355">
+                <gmp-icon>
+                  <img
+                    src="https://maps.google.com/mapfiles/ms/icons/blue-dot.png"
+                  />
+                </gmp-icon>
+              </gmp-advanced-marker>
+
+              <!-- Marcador vermelho para Ubatuba -->
+              <gmp-advanced-marker position="-23.4336,-45.0834">
+                <gmp-icon>
+                  <img
+                    src="https://maps.google.com/mapfiles/ms/icons/red-dot.png"
+                  />
+                </gmp-icon>
+              </gmp-advanced-marker>
+
+              <!-- Marcadores no litoral do Rio de Janeiro -->
+
+              <!-- Marcador azul -->
+              <gmp-advanced-marker position="-22.9731,-43.1896">
+                <gmp-icon>
+                  <img
+                    src="https://maps.google.com/mapfiles/ms/icons/blue-dot.png"
+                  />
+                </gmp-icon>
+              </gmp-advanced-marker>
+
+              <!-- Marcador vermelho -->
+              <gmp-advanced-marker position="-22.9836,-42.0192">
+                <gmp-icon>
+                  <img
+                    src="https://maps.google.com/mapfiles/ms/icons/red-dot.png"
+                  />
+                </gmp-icon>
+              </gmp-advanced-marker>
+
+              <!-- Marcador azul -->
+              <gmp-advanced-marker position="-22.9788,-42.2066">
+                <gmp-icon>
+                  <img
+                    src="https://maps.google.com/mapfiles/ms/icons/blue-dot.png"
+                  />
+                </gmp-icon>
+              </gmp-advanced-marker>
+
+              <!-- Marcador vermelho -->
+              <gmp-advanced-marker position="-23.0816,-44.2505">
+                <gmp-icon>
+                  <img
+                    src="https://maps.google.com/mapfiles/ms/icons/red-dot.png"
+                  />
+                </gmp-icon>
+              </gmp-advanced-marker>
+
+              <!-- Marcador azul -->
+              <gmp-advanced-marker position="-23.0138,-44.2236">
+                <gmp-icon>
+                  <img
+                    src="https://maps.google.com/mapfiles/ms/icons/blue-dot.png"
+                  />
+                </gmp-icon>
+              </gmp-advanced-marker>
+
+              <!-- Marcador vermelho -->
+              <gmp-advanced-marker position="-23.0034,-43.9624">
+                <gmp-icon>
+                  <img
+                    src="https://maps.google.com/mapfiles/ms/icons/red-dot.png"
+                  />
+                </gmp-icon>
+              </gmp-advanced-marker>
+
+              <!-- Marcadores no litoral da Bahia -->
+
+              <!-- Marcador azul -->
+              <gmp-advanced-marker position="-12.9714,-38.5014">
+                <gmp-icon>
+                  <img
+                    src="https://maps.google.com/mapfiles/ms/icons/blue-dot.png"
+                  />
+                </gmp-icon>
+              </gmp-advanced-marker>
+
+              <!-- Marcador vermelho -->
+              <gmp-advanced-marker position="-14.7995,-39.2807">
+                <gmp-icon>
+                  <img
+                    src="https://maps.google.com/mapfiles/ms/icons/red-dot.png"
+                  />
+                </gmp-icon>
+              </gmp-advanced-marker>
+
+              <!-- Marcador azul -->
+              <gmp-advanced-marker position="-16.4519,-39.0809">
+                <gmp-icon>
+                  <img
+                    src="https://maps.google.com/mapfiles/ms/icons/blue-dot.png"
+                  />
+                </gmp-icon>
+              </gmp-advanced-marker>
+            </gmp-map>
+          </div>
+        </div>
+
+        <div>
+          <table>
+            <thead>
+              <tr class="indexes">
+                <th>Estado</th>
+                <th>Reciclados</th>
+                <th>Não reciclados</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>São Paulo</td>
+                <td>2</td>
+                <td>1</td>
+              </tr>
+              <tr>
+                <td>Rio de Janeiro</td>
+                <td>3</td>
+                <td>3</td>
+              </tr>
+              <tr>
+                <td>Bahia</td>
+                <td>2</td>
+                <td>1</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <img
+          class="img__plant"
+          src="../../public/assets/images/plants.webp"
+          alt="Sea plants"
+        />
+      </section>
     </main>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="dashboard.js"></script>
-</body>
+    <script
+      type="module"
+      src="https://unpkg.com/@googlemaps/extended-component-library@0.6"
+    ></script>
+  </body>
 </html>
