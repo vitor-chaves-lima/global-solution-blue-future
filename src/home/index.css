@@ -406,9 +406,28 @@ nav {
 }
 
 #section-6 {
-  height: 1000px;
+  height: 100vh;
   width: 100%;
-  background: purple;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+}
+
+#section-6 .section-content-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  flex-wraper: 1;
+}
+
+#section-6 .section-content-wrapper > .card {
+  font-size: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+
+  text-align: center;
 }
 
 @media (max-width: 576px) {
