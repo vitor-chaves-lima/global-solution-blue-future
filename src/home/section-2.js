@@ -5,10 +5,25 @@ const section2Center = `${section2SectionContent}>.center`;
 
 ScrollTrigger.create({
   trigger: section2,
+  start: "top 0",
+  end: "bottom 0",
+  onEnter: () => {
+    fadeOutAndChangeText("Benefícios da solução");
+  },
+  onEnterBack: () => {
+    fadeOutAndChangeText("Benefícios da solução");
+  },
+  toggleActions: "restart none none reverse",
+  preventOverlaps: true,
+});
+
+ScrollTrigger.create({
+  trigger: section2,
   start: "top top",
   end: "bottom center",
   animation: gsap
     .timeline({ immediateRender: false })
+    .to(navSectionTitle, { color: secondaryColor, duration: 0.4 })
     .to(
       navMenuButton,
       {

@@ -18,8 +18,23 @@ ScrollTrigger.create({
   trigger: section5,
   start: "top 0",
   end: "bottom 0",
+  onEnter: (_) => {
+    fadeOutAndChangeText("Público impactado");
+  },
+  onEnterBack: () => {
+    fadeOutAndChangeText("Público impactado");
+  },
+  toggleActions: "restart none none reverse",
+  preventOverlaps: true,
+});
+
+ScrollTrigger.create({
+  trigger: section5,
+  start: "top 0",
+  end: "bottom 0",
   animation: gsap
     .timeline({ immediateRender: false })
+    .to(navSectionTitle, { color: primaryColor, duration: 0.4 })
     .to(
       navMenuButton,
       {

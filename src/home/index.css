@@ -32,6 +32,11 @@ nav {
   cursor: pointer;
 }
 
+#section-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
 #nav-menu-btn {
   border-radius: 50%;
   padding: 5px;
@@ -220,7 +225,7 @@ nav {
   display: flex;
   justify-content: center;
   width: 100%;
-  height: 550px;
+  height: 50vh;
   gap: 50px;
 }
 
@@ -310,7 +315,7 @@ nav {
 }
 
 #section-3 {
-  height: 60vh;
+  height: 100vh;
   width: 100%;
   box-sizing: border-box;
 }
@@ -327,12 +332,13 @@ nav {
   display: flex;
   justify-content: center;
   flex-direction: column;
+  gap: 40px;
 }
 
 .section-3-content > .card > div {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 30px;
   justify-content: center;
 }
 
@@ -459,7 +465,7 @@ nav {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--primary-color);
+  background-color: #ededed;
 }
 
 .slideshow-wrapper > .slideshow-slide-wrapper > .slide > .image-wrapper > img {
@@ -506,7 +512,7 @@ nav {
   font-size: 1.25rem;
   display: flex;
   flex-direction: column;
-  gap: 25px;
+  gap: 40px;
 
   text-align: center;
 }

@@ -6,8 +6,31 @@ const navMenuContent = "#nav-menu-content";
 const navMenuAnimation = "#nav-menu-animation";
 const navSectionButton = "#nav-section-btn";
 const navHomeButton = "#nav-home-btn";
+const navSectionTitle = "#section-title";
+const navSectionTitleElement = document.querySelector("#section-title");
 
 let isNavMenuOpen = false;
+
+const fadeOutAndChangeText = (newText) => {
+  gsap.to(navSectionTitle, {
+    duration: 0.4,
+    opacity: 0,
+    onComplete: () => changeText(newText),
+  });
+};
+
+const changeText = (newText) => {
+  navSectionTitleElement.textContent = newText;
+  gsap.to(navSectionTitle, { duration: 0.4, opacity: 1 });
+};
+
+const clearText = () => {
+  gsap.to(navSectionTitle, {
+    duration: 0.4,
+    opacity: 0,
+    onComplete: () => (navSectionTitleElement.textContent = ""),
+  });
+};
 
 const navmenuOpenEvent = new CustomEvent("navmenu", {
   detail: {

@@ -19,7 +19,7 @@ const heroScrollIndicatorTween = gsap.to(heroScrollIndicator, {
   },
 });
 
-const textsValues = ["Lorem Ipsum", "Dolor sit", "consectetur adipiscing"];
+const textsValues = ["renovação", "inovação", "transformação"];
 let currentIndex = 0;
 
 const highlightTimeline = gsap
@@ -99,4 +99,10 @@ ScrollTrigger.create({
     ),
   toggleActions: "restart none none reverse",
   preventOverlaps: true,
+  onEnter: (_) => {
+    clearText();
+  },
+  onEnterBack: () => {
+    clearText();
+  },
 });
