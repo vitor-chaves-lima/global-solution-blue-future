@@ -87,7 +87,14 @@ nav {
   width: 50%;
   right: 0;
   bottom: -100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: var(--secondary-color);
+}
+
+#nav-menu-animation > img {
+  width: 100%;
 }
 
 .container {
@@ -486,6 +493,7 @@ nav {
 
 .slideshow-wrapper > .slideshow-slide-wrapper > .slide > .content-wrapper > h3 {
   font-size: 2rem;
+  font-weight: bold;
 }
 
 .slideshow-wrapper > .slideshow-slide-wrapper > .slide > .content-wrapper > p {
